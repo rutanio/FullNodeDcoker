@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+    fullnode:
+     network_mode: host
+     build:
+      context: .
+      args:
+       - gitUrl
+       - chain
+       - defaultPort
+       - rpcPort
+       - apiPort
+       - signalPort   
+       - fullnodeContainerDir   
+       - configFile
+     volumes:
+       - ./chain.conf:${fullnodeContainerDir}/${configFile}
+       - ${fullnodeHostDir}:${fullnodeContainerDir}
