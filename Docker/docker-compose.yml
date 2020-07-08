@@ -6,13 +6,10 @@ services:
       context: .
       args:
        - gitUrl
-       - chain
-       - defaultPort
-       - rpcPort
-       - apiPort
-       - signalPort   
        - fullnodeContainerDir   
        - configFile
+     environment:
+       - eTicker=${ticker}
      volumes:
        - ./chain.conf:${fullnodeContainerDir}/${configFile}
        - ${fullnodeHostDir}:${fullnodeContainerDir}
