@@ -20,6 +20,7 @@ case ${2,,} in
   start)
      echo "Starting Full Node daemon..."
      cp chain-base.conf chain.conf
+     docker-compose --env-file ${envFile} build --no-cache
      docker-compose --env-file ${envFile} up -d
      ;;
   stop)

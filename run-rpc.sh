@@ -40,6 +40,7 @@ case ${2,,} in
      echo "Starting Node daemon for ElectrumX..."
      cp chain-base.conf chain.conf
      rpcSetup
+     docker-compose --env-file ${envFile} build --no-cache
      docker-compose --env-file ${envFile} up -d
      ;;
   stop)
