@@ -10,8 +10,6 @@ RUN git clone ${gitUrl}  \
     && cd /blockcore/src/Node/Blockcore.Node \
     && dotnet build
 
-RUN touch ${fullnodeContainerDir}/${configFile}
-
 WORKDIR /blockcore/src/Node/Blockcore.Node
 
 ENTRYPOINT exec dotnet run --chain="${eTicker}"
