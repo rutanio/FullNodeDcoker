@@ -19,8 +19,8 @@ dnsSetup(){
         nameserver=`jq .\"$ipHost\".nameserver dnslist.json`
         echo "" >> chain.conf
         echo "dnsfullnode=1" >> chain.conf
-        echo "dnshostname=${hostname}" >> chain.conf
-        echo "dnsnameserver=${nameserver}" >> chain.conf
+        echo "dnshostname=${hostname//"\""}" >> chain.conf
+        echo "dnsnameserver=${nameserver//"\""}" >> chain.conf
         echo "dnsmailbox=admin@fluidchains.com" >> chain.conf
     else
         echo "No DNS Server found"
