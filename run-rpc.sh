@@ -5,9 +5,8 @@
 cd Docker
 
 rpcSetup(){
-    userpass=`cat /etc/electrumx-*.conf | grep DAEMON_URL | cut -d "@" -f1 | cut -d "/" -f3` 
-    user="$(echo $userpass | cut -d: -f1)"
-    pass="$(echo $userpass | cut -d: -f2)"
+    user=`cat ${envFile} | grep rpcUser | cut -d '=' -f2`
+    pass=`cat ${envFile} | grep rpcPassword | cut -d '=' -f2`
 
     if [ -n "$pass" ]
     then      
@@ -18,10 +17,20 @@ rpcSetup(){
         echo "rpccontenttype=application/json" >> chain.conf
         echo "txindex=1" >> chain.conf 
     else
-        echo "No user or password on the ElectrumX configuration file"
+        echo "You must set a rpc user and password to start this node"
     fi
 }
 
+stopElectrumXService(){
+   if pgrep electrumx
+      then
+      pkill electrumx
+   else
+      echo "ElectrumX is not running!"
+   fi
+}
+
+stopElectrumXService
 case ${1,,} in 
   exos)
      envFile=openexo.env
@@ -37,15 +46,17 @@ esac
 
 case ${2,,} in 
   start)
-     echo "Starting Node daemon for ElectrumX..."
+     echo "Starting Node daemon..."
      cp chain-base.conf chain.conf
      rpcSetup
-     docker-compose --env-file ${envFile} build
-     docker-compose --env-file ${envFile} up -d
+
+     docker-compose -f docker-compose.yml -f docker-compose.electrumx.yml --env-file ${envFile} build
+     docker-compose -f docker-compose.yml -f docker-compose.electrumx.yml --env-file ${envFile} up -d
+
      ;;
   stop)
-     echo "Stopping Node daemon for ElectrumX..."
-     docker-compose stop
+     echo "Stopping Node daemon..."
+     docker-compose -f docker-compose.yml -f docker-compose.electrumx.yml stop
      ;;
   *)
      echo $"Usage: $0 TICKER {start | stop}"

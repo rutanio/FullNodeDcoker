@@ -1,0 +1,20 @@
+version: '3.8'
+services:  
+  electrumx:
+    build:
+      context: ./electrumx
+      args:
+       - dbDirectory
+    environment:
+      - DAEMON_URL=http://${rpcUser}:${rpcPassword}@localhost
+      - COIN=${ticker}
+      - DB_DIRECTORY=${dbDirectory}
+      - CACHE_MB=400
+      - SERVICES=tcp://:50001,ssl://:50002,rpc://0.0.0.0:8000
+      - DONATION_ADDRESS=${donationAddress} 
+    volumes:
+      - type: bind
+        source: ${dbDirectory}
+        target: ${dbDirectory}
+    network_mode: host
+    restart: always
