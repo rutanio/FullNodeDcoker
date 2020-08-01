@@ -7,7 +7,7 @@ services:
        - dbDirectory
     environment:
       - DAEMON_URL=http://${rpcUser}:${rpcPassword}@localhost
-      - COIN=${ticker}
+      - COIN=${coin}
       - DB_DIRECTORY=${dbDirectory}
       - CACHE_MB=400
       - SERVICES=tcp://:50001,ssl://:50002,rpc://0.0.0.0:8000
