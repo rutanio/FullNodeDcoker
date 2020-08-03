@@ -13,3 +13,8 @@ services:
      volumes:
        - ./chain.conf:${fullnodeContainerDir}/${configFile}
        - ${fullnodeHostDir}:${fullnodeContainerDir}
+     logging:
+      driver: "json-file"
+      options:
+          max-file: "5"
+          max-size: "10m"
