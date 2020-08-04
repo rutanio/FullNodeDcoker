@@ -16,20 +16,20 @@
       "nameserver": "vps202.oexo.net"
     },
     "54.90.11.207": {
-      "hostname": "seednode3.rutan.cloud",
-      "nameserver": "vps101.rutan.cloud"
+      "hostname": "seednode1.rutax.cloud",
+      "nameserver": "vps301.rutax.cloud"
     },
     "3.20.153.206": {
-      "hostname": "seednode4.rutan.network",
-      "nameserver": "vps102.rutan.network"
+      "hostname": "seednode2.rutax.network",
+      "nameserver": "vps302.rutax.network"
     },
     "54.176.156.144": {
-      "hostname": "seednode1.rutan.cloud",
-      "nameserver": "vps201.rutan.cloud"
+      "hostname": "seednode3.rutax.cloud",
+      "nameserver": "vps303.rutax.cloud"
     },
     "44.225.107.115": {
-      "hostname": "seednode2.rutan.network",
-      "nameserver": "vps202.rutan.network"
+      "hostname": "seednode4.rutax.network",
+      "nameserver": "vps304.rutax.network"
     },
     "73.204.72.128": {
         "hostname": "seednode99.rutan.network",
