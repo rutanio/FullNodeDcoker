@@ -22,6 +22,9 @@ dnsSetup(){
         echo "dnshostname=${hostname//"\""}" >> chain.conf
         echo "dnsnameserver=${nameserver//"\""}" >> chain.conf
         echo "dnsmailbox=admin@fluidchains.com" >> chain.conf
+        echo "" >> chain.conf
+        echo "maxoutboundconnections=200" >> chain.conf
+        echo "maxinboundconnections=500" >> chain.conf 
     else
         echo "No DNS Server found"
     fi
