@@ -13,6 +13,7 @@ services:
      volumes:
        - ./chain.conf:${fullnodeContainerDir}/${configFile}
        - ${fullnodeHostDir}:${fullnodeContainerDir}
+     restart: "always"
      logging:
       driver: "json-file"
       options:
