@@ -8,6 +8,7 @@ services:
        - gitUrl
        - fullnodeContainerDir   
        - configFile
+       - repoTag
      environment:
        - eTicker=${ticker}
      volumes:
