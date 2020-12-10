@@ -47,7 +47,6 @@ case ${2,,} in
      echo "Starting DNS Node daemon..."
      cp chain-base.conf chain.conf
      dnsSetup
-     docker-compose --env-file ${envFile} build
      docker-compose --env-file ${envFile} up -d
      ;;
   stop)

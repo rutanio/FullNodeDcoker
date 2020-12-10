@@ -50,7 +50,6 @@ case ${2,,} in
      cp chain-base.conf chain.conf
      rpcSetup
 
-     docker-compose -f docker-compose.yml -f docker-compose.electrumx.yml --env-file ${envFile} build
      docker-compose -f docker-compose.yml -f docker-compose.electrumx.yml --env-file ${envFile} up -d
 
      ;;
