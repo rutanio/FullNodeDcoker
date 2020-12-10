@@ -3,7 +3,7 @@ LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 ARG dbDirectory
 
-ENV _VERSION=1.16.0
+ENV _VERSION=1.15.1
 
 COPY ./bin /usr/local/bin
 RUN wget -q -O electrumx.tar.gz https://github.com/Fluidchains/electrumx-fluidchains/archive/${_VERSION}.tar.gz
