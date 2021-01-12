@@ -1,18 +1,18 @@
 {
     "184.73.67.217": {
-      "hostname": "seednode1.divergenti.cloud",
+      "hostname": "seednode1.divergenti.network",
       "nameserver": "vps311.divergenti.network"
     },
     "18.229.116.36": {
-      "hostname": "seednode2.divergenti.network",
+      "hostname": "seednode2.divergenti.cloud",
       "nameserver": "vps312.divergenti.cloud"
     },
     "208.68.36.11": {
-      "hostname": "seednode3.divergenti.cloud",
+      "hostname": "seednode3.divergenti.network",
       "nameserver": "vps211.divergenti.network"
     },
     "46.101.2.145": {
-      "hostname": "seednode4.divergenti.network",
+      "hostname": "seednode4.divergenti.cloud",
       "nameserver": "vps212.divergenti.cloud"
     },
     "23.21.63.46": {
