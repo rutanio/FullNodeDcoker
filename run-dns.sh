@@ -36,6 +36,9 @@ case ${1,,} in
   ruta)
      envFile=rutanio.env
      ;;
+  diver)
+     envFile=divergenti.env
+     ;;
   *)
      echo $"Usage: $0 TICKER {start | stop}"
      exit 1

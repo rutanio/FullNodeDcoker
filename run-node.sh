@@ -10,6 +10,9 @@ case ${1,,} in
   ruta)
      envFile=rutanio.env
      ;;
+  diver)
+     envFile=rutanio.env
+     ;;
   *)
      echo $"Usage: $0 TICKER {start | stop}"
      exit 1
