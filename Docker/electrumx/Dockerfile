@@ -3,12 +3,12 @@ LABEL maintainer="Sergio Quintero <sergio.quintero@fluidchains.com>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 
 ARG dbDirectory
-ENV _VERSION=1.15.1
+ENV _VERSION=1.16.0
 
 RUN apt-get update && \
     apt-get -y install python3.8 python3-pip librocksdb-dev libsnappy-dev libbz2-dev libz-dev liblz4-dev wget
 
-RUN wget -q -O electrumx.tar.gz https://github.com/Fluidchains/electrumx-fluidchains/archive/${_VERSION}.tar.gz
+RUN wget -q -O electrumx.tar.gz https://github.com/spesmilo/electrumx/archive/${_VERSION}.tar.gz
 RUN tar -xzf electrumx.tar.gz
 
 COPY ./bin /usr/local/bin
@@ -27,6 +27,7 @@ ENV SSL_KEYFILE ${DB_DIRECTORY}/electrumx.key
 ENV DB_ENGINE=rocksdb
 ENV MAX_SEND=10000000
 ENV CACHE_MB=2000
+ENV MAX_SESSIONS=100000
 
 
 WORKDIR ${dbDirectory}
