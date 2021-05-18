@@ -17,11 +17,11 @@
     },
     "23.21.63.46": {
       "hostname": "seednode1.oexo.cloud",
-      "nameserver": "vps101.oexo.cloud"
+      "nameserver": "vps301.oexo.cloud"
     },
     "54.241.246.224": {
       "hostname": "seednode2.oexo.net",
-      "nameserver": "vps102.oexo.net"
+      "nameserver": "vps302.oexo.net"
     },
     "167.99.149.55": {
       "hostname": "seednode3.oexo.cloud",
